@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(red, yellow);
+            background-repeat: no-repeat;
+        }
+        ol{
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+     <h1>Write the code, one line for each action</h1>
+     <ol type="a">
+        <li> Create an empty object user.</li>
+        <li>Add the property name with the value John</li>
+        <b></b>
+        <li>Add the property surname with the value Smith</li>
+        <b></b>
+        <li> Change the value of the name to Peter.</li>
+        <b></b>
+        <li> Remove the property name from the object.</li>
+        <b></b>
+     </ol>
+
+
+     <script>
+        let user = {
+            name : "John",
+            surname : "Smith",
+          };
+        console.log(user)
+      
+        user.name = "Peter"
+        console.log(user.name)
+       
+        delete user.name
+        console.log(name)
+     </script>
+</body>
+</html>

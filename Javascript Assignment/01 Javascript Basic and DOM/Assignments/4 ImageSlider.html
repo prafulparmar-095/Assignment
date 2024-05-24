@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+h3{
+  text-align: center;
+   color: white;
+  font-family: sans-serif;
+}
+.gallery {
+    width: 100%
+}
+
+.gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative
+}
+
+.gallery-item {
+    height: 150px;
+    opacity: .4;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    width: 150px;
+    z-index: 0
+}
+
+.gallery-item.gallery-item-selected {
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 2
+}
+
+.gallery-item.gallery-item-previous,.gallery-item.gallery-item-next {
+    height: 200px;
+    opacity: 1;
+    width: 200px;
+    z-index: 1
+}
+
+.gallery-item.gallery-item-previous {
+    left: 22%;
+    transform: translateX(-50%)
+}
+
+.gallery-item.gallery-item-next {
+    left: 77%;
+    transform: translateX(-50%)
+}
+
+.gallery-item.gallery-item-first {
+    left: 0%;
+    transform: translateX(-50%)
+}
+
+.gallery-item.gallery-item-last {
+    left: 97%;
+    transform: translateX(-50%)
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0
+}
+
+.gallery-controls button {
+    border: 0;
+    font-size: 16px;
+    margin: 0 20px;
+    padding: 0 12px;
+}
+
+.gallery-controls-previous {
+    position: relative
+}
+
+
+.gallery-controls-next {
+    position: relative
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Javascript Slider</h1>
+        <h3>Created by Dropinks</h3>
+          <div class="gallery">
+            <div class="gallery-container">
+              <img class="gallery-item gallery-item-first" src="../Images/yellow color.png">
+              <img class="gallery-item gallery-item-previous" src="../Images/red color.png">
+              <img class="gallery-item gallery-item-selected" src="../Images/violet color.png">
+              <img class="gallery-item gallery-item-next" src="../Images/light green color.png">
+              <img class="gallery-item gallery-item-last" src="../Images/blue color image.png">
+            </div>
+            <div class="gallery-controls">
+            <button class="gallery-controls-previous" id="prev-btn"><i class="fa-solid fa-arrow-left"></i>previous</button>
+             <button class="gallery-controls-next" id="next-btn"><i class="fa-solid fa-arrow-right"></i>next</button> 
+            </div>
+          </div>
+        </div>
+
+ 
+ 
+ 
+ <script>
+        const galleryContainer = document.querySelector('.gallery-container');
+        const galleryControlsContainer = document.querySelector('.gallery-controls');
+const galleryControls = [];
+const galleryItems = document.querySelectorAll('.gallery-item');
+class Carousel {
+    constructor(container, items, controls) {
+        this.carouselContainer = container;
+        this.carouselControls = controls;
+        this.carouselArray = [...items];
+    }
+    setInitialState() {
+        this.carouselArray[0].classList.add('gallery-item-first');
+        this.carouselArray[1].classList.add('gallery-item-previous');
+        this.carouselArray[2].classList.add('gallery-item-selected');
+        this.carouselArray[3].classList.add('gallery-item-next');
+        this.carouselArray[4].classList.add('gallery-item-last');
+       
+    }
+    setCurrentState(target, selected, previous, next, first, last) {
+        selected.forEach(el=>{
+            el.classList.remove('gallery-item-selected');
+            if (target.className == 'gallery-controls-previous') {
+                el.classList.add('gallery-item-next');
+            } else {
+                el.classList.add('gallery-item-previous');
+            }
+        }
+        );
+        previous.forEach(el=>{
+            el.classList.remove('gallery-item-previous');
+            if (target.className == 'gallery-controls-previous') {
+                el.classList.add('gallery-item-selected');
+            } else {
+                el.classList.add('gallery-item-first');
+            }
+        }
+        );
+        next.forEach(el=>{
+            el.classList.remove('gallery-item-next');
+            if (target.className == 'gallery-controls-previous') {
+                el.classList.add('gallery-item-last');
+            } else {
+                el.classList.add('gallery-item-selected');
+            }
+        }
+        );
+        first.forEach(el=>{
+            el.classList.remove('gallery-item-first');
+            if (target.className == 'gallery-controls-previous') {
+                el.classList.add('gallery-item-previous');
+            } else {
+                el.classList.add('gallery-item-last');
+            }
+        }
+        );
+        last.forEach(el=>{
+            el.classList.remove('gallery-item-last');
+            if (target.className == 'gallery-controls-previous') {
+                el.classList.add('gallery-item-first');
+            } else {
+                el.classList.add('gallery-item-next');
+            }
+        }
+        );
+    }
+    setControls() {
+        this.carouselControls.forEach(control=>{
+            galleryControlsContainer.appendChild(document.createElement('button')).className =`gallery-controls-${control}`;
+        }
+        );
+        !!galleryControlsContainer.childNodes[0] ? galleryControlsContainer.childNodes[0].innerHTML = this.carouselControls[0] : null;
+        !!galleryControlsContainer.childNodes[0] ? galleryControlsContainer.childNodes[0].innerHTML = this.carouselControls[0] : null;
+    }
+    useControls() {
+        const triggers = [...galleryControlsContainer.childNodes];
+        triggers.forEach(control=>{
+            control.addEventListener('click', ()=>{
+                const target = control;
+                const selectedItem = document.querySelectorAll('.gallery-item-selected');
+                const previousSelectedItem = document.querySelectorAll('.gallery-item-previous');
+                const nextSelectedItem = document.querySelectorAll('.gallery-item-next');
+                const firstCarouselItem = document.querySelectorAll('.gallery-item-first');
+                const lastCarouselItem = document.querySelectorAll('.gallery-item-last');
+                this.setCurrentState(target, selectedItem, previousSelectedItem, nextSelectedItem, firstCarouselItem, lastCarouselItem);
+            }
+            );
+        }
+        );
+    }
+}
+const exampleCarousel = new Carousel(galleryContainer,galleryItems,galleryControls);
+exampleCarousel.setControls();
+exampleCarousel.setInitialState();
+exampleCarousel.useControls();
+
+    </script>
+</body>
+</html>

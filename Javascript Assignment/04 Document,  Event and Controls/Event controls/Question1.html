@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: sans-serif;
+        }
+        #password{
+            height: 20px;
+            width: 200px;
+        }
+        label{
+            font-size: 20px;
+        }
+        #show-password{
+            height: 13px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password">
+        <h1>Create a program to hide/show the password</h1>
+         <input type="password" id="password">
+         <label for="show-password">Show Password</label>
+         <input type="checkbox" id="show-password">
+    </div>
+
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+        showPasswordCheckbox.addEventListener('click', () => {
+        if (showPasswordCheckbox.checked) {
+         passwordInput.type = 'text';
+         } else {
+         passwordInput.type = 'password';
+        }
+        });
+    </script>
+</body>
+</html>

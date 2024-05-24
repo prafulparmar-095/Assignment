@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        pre{
+            font-size: 25px;
+        }
+        #Expression1{
+           background-color: cadetblue;
+           padding-left: 10px;
+        }
+        .Expression2{
+        background-color: coral;
+        width: 100%;
+        padding-left: 10px;
+        }
+        .Expression3{
+            background-color: aquamarine;
+            padding-left: 10px;
+        }
+        .Expression4{
+            background-color: darkcyan;
+            padding-left: 10px;
+        }
+        .Expression5{
+            background-color: darkslategrey;
+            padding-left: 10px;
+        }
+    </Style>
+</head>
+<body>
+    <div id="Expression1">
+   <pre><strong> What will be the result for these expressions?</strong>
+1. 5 > 4 => <p><b> True</b>: because 5 is greater than 4</p> 
+2. "apple" > "pineapple"=> <p><b>False</b>: The first character of "Apple" has the lower Unicode value than "p"(the first character <br> of the "Pineapple"), </p> 
+3. "2" > "12"=> <p><b>True</b> : Here, When comparing strings, JavaScript compares them lexicographically. Here, "2" is greater than <br> "1" (the first character of "12") </p> 
+4. undefined == null=> <p><b>True</b> : the equality operator == performs type coercion. undefined and null are considered equal <br> when compared using ==</p> 
+5. undefined === null=> <p><b>False</b> : The strict equality operator === does not perform type coercion and requires both operands to <br> be of the same type. </p> 
+6. null == "\n0\n"=> <p><b>False</b> : When using the equality operator ==, null is only equal to undefined and no other value.</p> 
+7. null === +"\n0\n"=> <p><b>False</b> : The +"\n0\n" converts the string "\n0\n" to the number 0. The strict equality operator === checks<br>  for both value and type.</p> 
+</pre>
+</div>
+<div class="Expression2">
+    <pre><strong>Will alert be shown?
+        if ("0") { alert( 'Hello'); }</strong>
+    <p><b>Yes,</b>the alert will be shown. In JavaScript, any non-empty string, including "0", is <br> considered truthy. Therefore, the <br>condition in the if statement evaluates to true, and the alert('Hello');</p>
+        <li>The string "0" is not an empty string; it contains the character '</li>
+        <li>In a boolean context, non-empty strings are evaluated as true.</li>
+        <li>Hence, if ("0") is essentially if (true).</li>
+     </pre>
+    </div>
+
+<div class="Expression3">
+    <pre>What is the code below going to output? <strong>alert( null || 2 || undefined )</strong>
+    <p>output => <b>2</b> , because :background-color
+        The || operator evaluates operands from left to right.<br>
+       It returns the first true value it encounters.<br>
+       If all values are false, it returns the last value.<br>
+    </p></pre>
+</div>
+
+<div class="Expression4">
+   <pre>The following function returns true if the parameter age is greater than
+18. Otherwise it asks for a confirmation and returns its result:
+function
+checkAge(age)
+{
+else {
+}
+}
+if (age> 18) { return true; }
+// ...return confirm ('did parents allow you?')
+<p> <b>It checks if the age parameter is greater than 18.</b>
+      <br>  If age is greater than 18, it returns true.</p>
+<p>If age is not greater than 18, it asks for confirmation with the message "Did parents allow you?<br>" using the confirm function.<br>
+    The confirm function displays a dialog box with "OK" and "Cancel" buttons.<br>
+    It returns true if the user clicks "OK" and false if the user clicks "Cancel".</p>
+<pre> 
+</div>
+
+<div class="Expression5">
+ <pre>
+    Replace Function Expressions with arrow functions in the code below:
+Function
+ask(question, yes, no)
+{ if (confirm(question))yes();
+else
+no();
+}
+ask("Do you agree?", function()
+{ alert("You agreed."); },
+function() {
+alert("You canceled the execution."); }
+}
+<p>Function Declaration: The ask function remains unchanged.<br>
+    Arrow Functions: The anonymous functions passed as arguments to ask are replaced with arrow functions:<br>
+    function() { alert("You agreed."); } becomes () => { alert("You agreed."); }<br>
+    function() { alert("You canceled the execution."); } becomes () => { alert("You canceled the execution."); }</p>
+ </pre>
+</div>
+
+<script>
+    // Expression 3 Answer
+    alert(null || 2 || undefined)
+
+    // Expression 4 Answer
+    function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+let userAge = prompt("Please enter your age:");
+userAge = Number(userAge);
+alert(checkAge(userAge));
+
+
+// Expression 5
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  () => { alert("You agreed."); },
+  () => { alert("You canceled the execution."); }
+);
+
+</script>
+</body>
+</html>

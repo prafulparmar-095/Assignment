@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map{
+            background-image: linear-gradient(red, orange, yellow);
+        }
+        h1{
+            text-decoration: underline;
+        }
+        p{
+            font-size: 24px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <h1>Map to names</h1>
+           <p> let john = { name: "John", age: 25 }; <br> let pete = { name: "Pete", age: 30 }; <br>let mary =
+            { name: "Mary", age: 28 }; <br> let users = [ john, pete, mary ]; <br> let names = /* ... your
+            code */ alert( names ); // John, Pete, Mary</p>
+    </div>
+
+
+    <script>
+       let john = { name: "John", age: 25 };
+       let pete = { name: "Pete", age: 30 };
+       let mary = { name: "Mary", age: 28 };
+       let users = [john, pete, mary]; 
+       let names = users.map(user => user.name);
+      alert(names);
+      console.log(names)
+    </script>
+</body>
+</html>

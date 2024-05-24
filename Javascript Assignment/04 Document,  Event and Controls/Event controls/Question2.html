@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-family: sans-serif;
+        }
+        #myButton{
+            background-color: aqua;
+            height: 40px;
+            width: 90px;
+            font-size: 17px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2> Create a program that will select all the classes and loop over and whenever i click the
+        button the alert should show</h2>
+        <p class="myClass">First one</p>
+        <p class="myClass">Second one</p>
+        <p class="myClass">Third one</p>
+        <p class="myClass">fourth one</p>
+        <p class="myClass">fifth one</p>
+       <button id="myButton">Click me!</button>
+
+
+        <script>
+            const myButton = document.getElementById('myButton');
+            const myClasses = document.querySelectorAll('.myClass');
+            myButton.addEventListener('click', () => {
+             myClasses.forEach((element) => {
+            alert(element.textContent);
+
+  });
+});
+        </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .salaries{
+        background-image: linear-gradient(red, yellow);
+      }
+      p{
+        font-family: sans-serif;
+        font-size: 24px;
+      }
+    </style>
+</head>
+<body>
+    <div class="salaries">
+    <p>Sum the properties There is a salaries object with arbitrary number of salaries. Write<br>
+     the function sumSalaries(salaries) that returns the sum of all salaries using<br>
+     Object.values and the for..of loop.If salaries is empty, then the result must be 0.<br>
+    let salaries = { <br>
+    "John": 100,<br>
+    "Peter": 300,<br>
+    "Mary": 250<br>
+    }<br>
+     alert(sumSalaries(salaries))</p>
+    </div>
+
+    <script>
+       function sumSalaries(salaries) {
+       let sum = 0;
+        for (let salary of Object.values(salaries)) {
+        sum += salary;
+        }
+       return sum;
+       }
+       let salaries = {
+       "John": 100,
+       "Peter": 300,
+       "Mary": 250
+       };
+      alert( sumSalaries(salaries));
+      console.log(salaries)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtotal Calculator</title>
+    <link href="subtotal.css" rel="stylesheet">
+</head>
+<body>
+        <table id="items-table">
+            <thead>
+                <tr>
+                    <th>Product Info</th>
+                    <th>Quantity</th>
+                    <th>Price (per <br> unit)</th>
+                    <th>Price<br>(subtotal)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="item" data-price="29.99">
+                    <td class="name"><img src="../images/window hardware.jpeg"><br>Fortunata Window Hardware - Decorative <br> Holdbacks - Mocha</td>
+                   
+                    <td><input type="number" class="quantity" min="0" value="0"></td>
+                    <td class="price">$29.99</td>
+                    <td class="amount">$0.00</td>
+                    <td><button type="button" class="remove-button">Remove</button></td>
+                </tr>
+                <tr class="item" data-price="12.99">
+                    <td class="name"><img src="../images/clip rings.jpeg"><br>Woven Trellis Window Hardware - Clip <br> Rings - Bronze</td>
+                    
+                    <td><input type="number" class="quantity" min="0" value="0"></td>
+                    <td class="price">$12.99</td>
+                    <td class="amount">$0.00</td>
+                    <td><button type="button" class="remove-button">Remove</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span id="subtotal">0.00</span></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+  
+  <script src="subtotal.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .JSON{
+           background-image: linear-gradient(red, yellow);
+        }
+        p{
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+     <div class="JSON">
+       <p> Turn the object into JSON and back Turn the user into JSON and then read it back
+          into another variable. <br>
+        user = { name: "John Smith", age: 35}</p>
+     </div>
+
+    <script>
+        let user = { name: "John Smith", age: 35 };
+        let userJSON = JSON.stringify(user);
+        console.log(userJSON); 
+        let parsedUser = JSON.parse(userJSON);
+        console.log(parsedUser); 
+
+    </script>
+</body>
+</html>

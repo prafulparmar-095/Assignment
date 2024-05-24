@@ -1,0 +1,41 @@
+.form{
+    border: 2px solid black;
+    font-size: 1.25rem;
+    padding: 20px;
+    height: 600px;
+    width: 650px;
+}
+ input{
+    height: 20px;
+    width: 300px;
+ }
+ label{
+    display: inline-block;
+    width: 45%;
+ }
+ p{
+  text-align: center;   
+ }
+ button{
+    border: 1px solid black;
+    margin-left: 295px;
+    height: 42px;
+    width: 137px;
+    font-size: 20px;
+    border-radius: 5px;
+    display: block;
+ }
+ .res, .modulus{
+    display: inline;
+ }
+ .res{
+    float: left;
+    margin: 30px 60px;
+ }
+ .modulus{
+    float: right;
+    margin: 30px 140px;
+ }
+ span{
+    color: blue;
+ }

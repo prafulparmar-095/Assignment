@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .assign{
+            background-image: linear-gradient(blue, white);
+            font-family: sans-serif;
+        }
+        ol{
+         font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="assign">
+        <h1>Destructuring assignment We have an object: Write the Destructuring assignment that
+            reads:</h1>
+        <ol type="a">
+            <li>Name property into the variable name</li>
+            <li> Year's property into the variable age.</li>
+            <li>sAdmin property into the variable isAdmin (false, if no such property)</li>
+            <li>et user = { name: "John", years: 30};</li>
+        </ol>
+    </div>
+
+    <script>
+       let user = { name: "John", years: 30 };
+       let { name, years: age, isAdmin = false } = user;
+       alert( name ); 
+       alert( age ); 
+       alert( isAdmin ); 
+       console.log(user) 
+    </script>
+</body>
+</html>

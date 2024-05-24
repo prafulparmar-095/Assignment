@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       h1{
+        font-family: sans-serif;
+       }
+       #myForm{
+        text-align: center;
+        background-color: lightgreen;
+        font-size: 20px;
+       }
+    </style>
+</head>
+<body>
+    <h1> Prevent the browser when i click the form submit button</h1>
+    <form id="myForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <script>
+       document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+        if (!username || !password) {
+            alert('Please fill in both username and password');
+            return; 
+        }
+        console.log('Form submitted successfully!');
+        
+    });
+    </script>
+</body>
+</html>

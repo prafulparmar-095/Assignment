@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .object{
+            background-image: linear-gradient(blue, white);
+        }
+        h1{
+            text-decoration: underline;
+        }
+        p{
+            font-size: 24px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="object">
+        <h1>Map to objects</h1>
+           <p> let john = { name: "John", surname: "Smith", id: 1 }; let pete = { name: "Pete",
+            surname: "Hunt", id: 2 }; let mary = { name: "Mary", surname: "Key", id: 3 }; let
+            users = [ john, pete, mary ]; let usersMapped = /* ...  code ... *</p>
+    </div>
+
+    <script>
+        let john = { name: "John", surname: "Smith", id: 1 };
+        let pete = { name: "Pete", surname: "Hunt", id: 2 };
+        let mary = { name: "Mary", surname: "Key", id: 3 };
+        let users = [john, pete, mary];
+         let usersMapped = users.map(user => ({
+        ...user,
+          fullName: user.name + " " + user.surname
+         }));
+        alert(usersMapped[0].id); // 1
+        alert(usersMapped[0].fullName); 
+
+        console.log(usersMapped)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+        display: flex;
+        justify-content: space-between;
+         align-items: center;
+         background-color: grey;
+        color: white;
+        padding: 10px 20px;
+        }
+
+        nav {
+        display: none;
+        }
+        #menu-button{
+           background-color: lightgreen;
+           height: 40px;
+           width: 110px;
+           font-size: 22px;
+           border-radius: 5px;
+
+        }
+        li {
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        @media (min-width: 768px) {
+         nav {
+         display: block;
+         }
+        }
+    </style>
+</head>
+<body>
+    <h1> Create a responsive header using proper JavaScript</h1>
+    <header id="header">
+        <h1>LOGO</h1>
+        <button id="menu-button">Menu</button>
+        <nav id="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <script>
+        let header = document.getElementById('header');
+        let menuButton = document.getElementById('menu-button');
+        let nav = document.getElementById('nav');
+        menuButton.addEventListener('click', () => {
+         nav.classList.toggle('show');
+         });
+        window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+        nav.classList.remove('show');
+        }
+       });
+      </script>
+</body>
+</html>

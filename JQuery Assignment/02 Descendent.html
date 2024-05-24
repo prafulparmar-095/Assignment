@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: aqua;
+            background-color: black;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .container{
+            border: 3px solid red;
+        }
+        #firstGen{
+            border: 3px solid red;
+            color: red;
+            margin: 15px;
+        }
+        #secondGen{
+            border: 3px solid red;
+            color: red;
+            margin: 15px;
+            margin-right: 55%;
+        }
+        #thirdGen{
+            border: 3px solid red;
+            color: red;
+            margin: 15px;
+            padding: 10px;
+        }
+        #fourthGen{
+            border: 3px solid red;
+            color: red;
+            padding: 25px;
+            margin: 50px;
+        }
+        #span{
+           border: 1px solid grey;
+           color: grey;
+           opacity: 0.9;
+        }   
+
+    </style>
+</head>
+<body>
+    <h1>Event bubbling tickling Example</h1>
+    <div class="container">
+     <div id="firstGen">
+        <h2>body(great-great-grandparent)</h2>
+        <div id="secondGen">
+            <h2>div(great-grandparent)</h2>
+            <div id="thirdGen">
+                <h2>ul(grandparent)</h2>
+            <div id="fourthGen">
+                <h2>li(direct parent)</h2>
+                <div id="span">
+                    <h2>span</h2>
+                </div>
+              </div>
+            </div>
+        </div>
+     </div>
+   </div>
+   
+   
+
+ <script src="https://code.jquery.com/jquery-3.7.1.js"
+ integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+ crossorigin="anonymous"></script>
+  
+      <script>
+        let GGParent = document.getElementById("firstGen");
+        let GrandParent = document.getElementById("secondGen");
+        let Parent = document.getElementById("thirdGen");
+        let child = document.getElementById("fourthGen");
+ 
+        GGParent.addEventListener("click", (e) => {
+            console.log("GrandParent");
+        }, { capture: false });
+        GrandParent.addEventListener("click", (e) => {
+            console.log("Parent");
+        }, { capture: false });
+        Parent.addEventListener("click", (e) => {
+            console.log("Child");
+        })
+        child.addEventListener("click", (e) => {
+            console.log("Child");
+        })
+     </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .array{
+            background-image: linear-gradient(blue, white);
+            font-family: sans-serif;
+         }
+         h1{
+            text-decoration: underline;
+         }
+         p{
+            font-size: 25px;
+         }
+    </style>
+</head>
+<body>
+    <div class="array">
+<h1>Is array copied?</h1>
+   <p> let fruits = ["Apples", "Pear", "Orange"]; // push a new value into the "copy" let
+    shoppingCart = fruits; shoppingCart.push("Banana"); // what's in fruits?
+    alert( fruits.length ); // ?</p>
+</div>
+
+    <script>
+        let fruits = ["Apples", "Pear", "Orange"]; 
+        let shoppingCart = fruits; 
+        shoppingCart.push("Banana"); 
+         alert( fruits.length ); 
+
+         console.log(fruits)
+
+    </script>
+</body>
+</html>

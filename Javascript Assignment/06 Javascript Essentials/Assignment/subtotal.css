@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+table {
+    width: 53%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid black;
+}
+thead {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.quantity {
+    width: 60px;
+    padding: 5px;
+}
+
+.remove-button {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #d9534f;
+}
+
+.subtotal {
+    margin-top: 20px;
+}
+
+.subtotal span {
+    font-weight: bold;
+}
