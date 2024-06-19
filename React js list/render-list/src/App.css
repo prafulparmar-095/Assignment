@@ -1,0 +1,31 @@
+.App{
+  background-color: rgb(142, 184, 52);
+  padding: 10px 0px;
+  margin: 50px 250px;
+}
+h1{
+ text-align: center;
+ font-size: 50px;
+ font-weight: 500;
+}
+.item-list {
+ list-style-type: none;
+ padding: 0;
+}
+
+.item {
+ display: flex;
+ text-align: center;
+ width: 50%;
+ font-size: 25px;
+ margin: 10px 221px;
+ background-color: white;
+ font-weight: 500;
+}
+
+.check-mark {
+ margin-right: 20px;
+ color: white;
+ background-color: antiquewhite;
+ border-radius: 50%;
+}
